@@ -26,10 +26,12 @@ amqp.connect('amqp://localhost', function (error0, connection) {
     // Consome mensagens da fila
     // O método consume recebe dois parâmetros: a fila e uma função de callback
     channel.consume(queue, function (msg) {
+      
       // Imprime no console a mensagem recebida
       // msg.content.toString() converte o buffer da mensagem em uma string
       console.log(" [x] Received %s", msg.content.toString());
     }, {
+      
       // O parâmetro noAck: true indica que as mensagens não precisam ser confirmadas
       // Isso significa que o RabbitMQ não espera uma confirmação de recebimento da mensagem
       noAck: true
