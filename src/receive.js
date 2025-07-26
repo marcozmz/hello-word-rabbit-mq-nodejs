@@ -12,7 +12,7 @@ amqp.connect('amqp://localhost', function (error0, connection) {
 
     // Declara uma fila chamada 'hello'
     // A fila é onde as mensagens serão enviadas e recebidas
-    const queue = 'hello'; // ✅ Declare aqui
+    const queue = 'hello';
 
     // Assegura que a fila existe
     // O parâmetro { durable: false } indica que a fila não deve persistir após o RabbitMQ ser reiniciado
@@ -21,7 +21,7 @@ amqp.connect('amqp://localhost', function (error0, connection) {
 
     // Imprime no console que está aguardando mensagens na fila
     // O parâmetro 'queue' é a fila onde as mensagens serão recebidas
-    console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue); // ✅ Agora funciona
+    console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
 
     // Consome mensagens da fila
     // O método consume recebe dois parâmetros: a fila e uma função de callback
